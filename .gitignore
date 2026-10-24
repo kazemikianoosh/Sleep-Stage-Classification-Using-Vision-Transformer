@@ -1,0 +1,33 @@
+# Patient data and generated artifacts
+data/*
+!data/.gitkeep
+!data/README.md
+results/
+models/
+model/
+*.npy
+!examples/synthetic_epochs.npy
+*.npz
+*.h5
+*.weights.h5
+*.ckpt*
+*.pb
+saved_model/
+
+# Python, notebooks, editors
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+.DS_Store
+.idea/
+.vscode/

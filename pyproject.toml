@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vit-sleep"
+version = "1.0.0"
+description = "Interpretable five-stage sleep classification from cardiorespiratory signals with a 1D Vision Transformer"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "Kianoosh Kazemi", email = "kianoosh.k.kazemi@utu.fi" }]
+keywords = ["sleep staging", "vision transformer", "PPG", "respiration", "explainability", "wearables"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+dependencies = [
+  "tensorflow>=2.15,<2.17",
+  "numpy>=1.24",
+  "scipy>=1.10",
+  "scikit-learn>=1.3",
+  "pandas>=2.0",
+  "matplotlib>=3.7",
+  "seaborn>=0.13",
+  "tqdm>=4.65",
+]
+
+[project.optional-dependencies]
+notebooks = ["jupyter>=1.0", "nbformat>=5.9", "ipykernel>=6.25"]
+shap = ["shap>=0.44"]
+preprocess = ["pyedflib>=0.1.36", "neurokit2>=0.2.7"]
+dev = ["pytest>=7.4", "ruff>=0.4"]
+
+[project.urls]
+Repository = "https://github.com/kazemikianoosh/Sleep-Stage-Classification-Using-Vision-Transformer"
+
+[tool.setuptools.packages.find]
+include = ["vit_sleep*"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py39"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
